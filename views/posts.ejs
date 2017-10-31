@@ -25,7 +25,7 @@
         </thead>
         <tbody>
           <% posts.forEach( function(post) { %>
-            <% var href='/posts/delete/' + post.replace(/ /g, '%20') %>
+
             <% var href='/posts/delete/' + post %>
             <tr>
               <td><%= post %></td>
