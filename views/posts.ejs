@@ -5,7 +5,7 @@
   </head>
   <body>
     <header>
-      <% include  ./partials/head %>
+      <% include  ./partials/header %>
     </header>
     <h1 class='center'>Posts</h1>
     <hr />
@@ -25,8 +25,8 @@
         </thead>
         <tbody>
           <% posts.forEach( function(post) { %>
-
             <% var href='/posts/delete/' + post %>
+           <% var href = '/posts/delete/' + post.replace(/ /g, '%20') %>
             <tr>
               <td><%= post %></td>
               <td><a href=<%= href %> + <%= post %></a>Delete</td>
