@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ./partials/head %>
+  </head>
+  <body>
+    <header>
+      <% include  ./partials/head %>
+    </header>
+    <h1 class='center'>Posts</h1>
+    <hr />
+    <div class='row'>
+      <div class='col s12 m4'>
+        <h3>Add Post</h3>
+        <form action='/posts' method='post'>
+          <input type='text' name='name' placeholder='name' />
+          <input type='text' name='comment' placeholder='comment' />
+          <button class='btn btn-waves' type='submit'>Add</button>
+        </form>
+      </div>
+      <table class='table col m8 s12'>
+        <thead>
+            <th>Name</th>
+            <th>x</th>
+        </thead>
+        <tbody>
+          <% posts.forEach( function(post) { %>
+            <% var href='/posts/delete/' + post.replace(/ /g, '%20') %>
+            <% var href='/posts/delete/' + post %>
+            <tr>
+              <td><%= post %></td>
+              <td><a href=<%= href %> + <%= post %></a>Delete</td>
+          <% }); %>
+        </tbody>
+      </table>
+    </body>
+  </html>
