@@ -19,8 +19,8 @@ router.post('/', function(req, res, next) {
 
 /* DELETE a post */
 router.get('/delete/:name', function(req, res, next) {
-  redisClient.srem("movies", req.params.name);
-  res.redirect('/movies');
+  redisClient.srem("posts", req.params.name);
+  res.redirect('/posts');
 });
 
 module.exports = router;
