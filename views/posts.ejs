@@ -8,30 +8,41 @@
       <% include  ./partials/header %>
     </header>
     <h1 class='center'>Posts</h1>
+    <p class="pad">
+      Life is what you make it, so let’s make it. You see that bamboo behind me though, you see that bamboo? Ain’t nothin’ like bamboo. Bless up. Fan luv. Give thanks to the most high. Eliptical talk. Every chance I get, I water the plants, Lion! The first of the month is coming, we have to get money, we have no choice. It cost money to eat and they don’t want you to eat. We the best. Fan luv. In life you have to take the trash out, if you have trash in your life, take it out, throw it away, get rid of it, major key.
+
+      You see the hedges, how I got it shaped up? It’s important to shape up your hedges, it’s like getting a haircut, stay fresh. How’s business? Boomin. To succeed you must believe. When you believe, you will succeed. The key to more success is to get a massage once a week, very important, major key, cloth talk. I’m up to something. They will try to close the door on you, just open it.
+
+      Life is what you make it, so let’s make it. A major key, never panic. Don’t panic, when it gets crazy and rough, don’t panic, stay calm. Life is what you make it, so let’s make it. They never said winning was easy. Some people can’t handle success, I can. Watch your back, but more importantly when you get out the shower, dry your back, it’s a cold world out there. Lion! Major key, don’t fall for the trap, stay focused. It’s the ones closest to you that want to see you fail.
+    </p>
     <hr />
-    <div class='row'>
-      <div class='col s12 m4'>
-        <h3>Add Post</h3>
-        <form action='/posts' method='post'>
-          <input type='text' name='name' placeholder='name' />
-          <input type='text' name='comment' placeholder='comment' />
-          <button class='btn btn-waves' type='submit'>Add</button>
-        </form>
+    <div class="pad">
+      <div class='row'>
+        <div class='col s4 m4'>
+          <h3>Add Post</h3>
+          <form action='/posts' method='post'>
+            <input type='text' name='name' placeholder='name' />
+            <input type='text' name='comment' placeholder='comment' />
+            <button class='btn btn-waves' type='submit'>Add</button>
+          </form>
+        </div>
+        <table class='table col s8 m8'>
+          <thead>
+              <th>Name</th>
+              <th>x</th>
+          </thead>
+          <tbody>
+            <% posts.forEach( function(post) { %>
+              <% var href='/posts/delete/' + post %>
+              <% var href = '/posts/delete/' + post.replace(/ /g, '%20') %>
+              <tr>
+                <td><%= post %></td>
+                <td><a href=<%= href %> + <%= post %></a>Delete</td>
+            <% }); %>
+          </tbody>
+        </table>
       </div>
-      <table class='table col m8 s12'>
-        <thead>
-            <th>Name</th>
-            <th>x</th>
-        </thead>
-        <tbody>
-          <% posts.forEach( function(post) { %>
-            <% var href='/posts/delete/' + post %>
-           <% var href = '/posts/delete/' + post.replace(/ /g, '%20') %>
-            <tr>
-              <td><%= post %></td>
-              <td><a href=<%= href %> + <%= post %></a>Delete</td>
-          <% }); %>
-        </tbody>
-      </table>
+    </div>
     </body>
+    <% include ./partials/footer %>
   </html>
