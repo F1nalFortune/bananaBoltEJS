@@ -35,6 +35,9 @@ app.get('/ladder', function(req, res) {
     res.render('ladder');
 });
 
+app.get('/game', function(req, res) {
+    res.render('game');
+});
 
 
 // catch 404 and forward to error handler

@@ -27,6 +27,15 @@ footer.page-footer{
   background-color: #0b0d11 !important;
 }
 
+#game{
+    color: white;
+    border: solid;
+    border-color: black;
+    height: 500px;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
 #title{
   color: #ffff80;
 }
