@@ -7,7 +7,7 @@
     <header>
       <% include  ./partials/header %>
     </header>
-    <h1 class='center'>Contact Us</h1>
+    <h1 class='center marker'>Contact Us</h1>
     <p class="pad">
       Life is what you make it, so let’s make it. You see that bamboo behind me though, you see that bamboo? Ain’t nothin’ like bamboo. Bless up. Fan luv. Give thanks to the most high. Eliptical talk. Every chance I get, I water the plants, Lion! The first of the month is coming, we have to get money, we have no choice. It cost money to eat and they don’t want you to eat. We the best. Fan luv. In life you have to take the trash out, if you have trash in your life, take it out, throw it away, get rid of it, major key.
 
@@ -19,7 +19,7 @@
     <div class="pad">
       <div class='row'>
         <div class='col s4 m4'>
-          <h3>Add Post</h3>
+          <h3 class="marker">Add Post</h3>
           <form action='/posts' method='post'>
             <input type='text' name='name' placeholder='name' />
             <input type='text' name='comment' placeholder='comment' />
@@ -29,16 +29,21 @@
         <table class='table col s8 m8'>
           <thead>
               <th>Name</th>
+              <th>Comment</th>
               <th>x</th>
           </thead>
           <tbody>
-            <% posts.forEach( function(post) { %>
-              <% var href='/posts/delete/' + post %>
-              <% var href = '/posts/delete/' + post.replace(/ /g, '%20') %>
-              <tr>
-                <td><%= post %></td>
-                <td><a href=<%= href %> + <%= post %></a>Delete</td>
-            <% }); %>
+           <% posts.forEach( function(post) { %>
+             <% action = '/posts/' + post.id %>
+               <tr>
+               <td><%= post.name %></td>
+               <td><%= post.comment %></td>
+               <td>
+                 <form action=<%= action %> method='POST'>
+                   <button class='btn waves-effect' type='submit'>Delete</button>
+                 </form>
+               </td>
+           <% }); %>
           </tbody>
         </table>
       </div>
