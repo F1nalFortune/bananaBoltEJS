@@ -1,6 +1,4 @@
 var express = require('express');
-var redis = require('redis');
-var redisClient = redis.createClient();
 var router = express.Router();
 var mongoose = require('mongoose');
 var Post = mongoose.model('Post');
