@@ -2,15 +2,15 @@
 <html>
   <head>
     <% include ./partials/head %>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-  <link rel="stylesheet" href="/stylesheets/font-awesome/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
   </head>
   <body>
     <header>
       <% include ./partials/header %>
     </header>
     <h1 class="center marker">Welcome</h1>
+    <% if (user) { %>
+      <p>You should see this if you are logged in</p>
+    <% } %>
     <p class="pad">
       Lorem Khaled Ipsum is a major key to success. They don’t want us to eat. The key is to enjoy life, because they don’t want you to enjoy life. I promise you, they don’t want you to jetski, they don’t want you to smile. We the best. Watch your back, but more importantly when you get out the shower, dry your back, it’s a cold world out there. Give thanks to the most high. Major key, don’t fall for the trap, stay focused. It’s the ones closest to you that want to see you fail. They don’t want us to win.
 

@@ -8,6 +8,10 @@
       <li><a href="/game">Game</a></li>
       <li><a href="/ladder">Ladder</a></li>
       <li><a href="/">Home</a></li>
+  <% if (!user) {%>
+      <li><a href="/login">Admin</a></li>
+      <% } %>
     </ul>
+
   </div>
 </nav>
